@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=yes">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<title>{$model.name}-{~echo cfg('shorttitle')}</title>
+<meta name="keywords" content="{$model.name}" />
+<meta name="description" content="" />
+<meta name="renderer" content="webkit">
+<link rel="stylesheet" type="text/css" href="__STATIC__css/base.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/animate.min.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/style.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/responsive.css" />
+<script src="__STATIC__js/jquery-1.11.0.min.js"></script>
+<script src="__STATIC__js/wow.min_1.js"></script>
+<script src="__STATIC__js/owl.carousel.min.js"></script>
+<script src="__STATIC__js/page.js"></script>
+</head>
+<body>
+ {include file="conn/header" /}
+
+<div class="page">
+  <div class="rowFluid">
+    <div class="span12">
+      <div class="main">
+              <div class="banner">
+          <div class="rowFluid">
+            <div class="span12">
+              <div class="owl-demo wow fadeInUp">
+                <div class="item">
+              <h3 class="banner_title">注册公司 专业代理记账</h3>
+
+                                    <div class="banner_jianjie">
+                                        <div class="banner_text">服务地区：南昌、吉安、九江、赣州、萍乡、上饶、宜春、新余、抚州、景德镇</div>
+                                        <div class="banner_button"><a href="#">服务热线：400-966-7916</a></div>
+                  </div>
+                </div>
+              </div>
+              <ul class="platform_advantage_bg">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          
+  
+        </div>
+        
+
+        
+        
+        <div class="technical_support">
+          <div class="rowFluid">
+            <div class="span12">
+              <div class="container">
+              
+           <div class="weizhi">当前位置：
+                      当前位置
+                        <a href="/">首页</a>&nbsp;&gt;&nbsp; {$upnavtitle.title?$upnavtitle.title." > ":''}<a href="/{$navtitle.url}/{$navtitle.id}.html">{$navtitle.title}</a></div>
+                
+              
+                <div class="technical_support_content">
+                  <div class="span9 col-sm-12 ">
+                    <div class="technical_support_list">
+                      <div class="technical_support_box">
+                     
+                        {$model.content|raw}
+                       
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="span3 col-sm-12 ">
+                    <div class="technical_support_list">
+                      <div class="technical_support_box">
+                        <div class="title">业务范围</div>
+                        <ul>
+                         {foreach name="category" item="v" key="k" }
+                          <li> <a href="/page/{$v.id}.html">
+                            <div class="text">{$v.name} </div>
+                            </a> </li> {/foreach}
+
+                            </div>
+
+                        </ul>
+                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+ {include file="conn/footer" /}
+
+</body>
+</html>

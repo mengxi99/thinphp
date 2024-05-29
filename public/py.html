@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <input id="inp" type="text">
+    <button id="send">发送</button>
+    <div id="div"></div>
+
+</body>
+<script>
+    var btn = document.getElementById('send')
+    var div = document.getElementById('div')
+    var div1 = document.getElementById('div1')
+    var inp = document.getElementById('inp')
+    btn.addEventListener('click', btnClick)
+    var ws = null
+    function connect(val) {
+        // ws = new WebSocket('ws:localhost:10000/websocket');
+        ws = new WebSocket('ws:211.149.131.153:7788/websocket');
+
+        ws.onopen = function () {
+            console.log('WebSocket连接已打开');
+            if (val) {
+                ws.send(JSON.stringify({val:inp.value,id:uid}))
+            }
+        };
+        ws.onclose = function (evt) {
+            console.log("on close");
+            ws = null
+        }
+        ws.onmessage = function (evt) {
+            console.log(evt.data);
+            div.append(evt.data)
+        }
+    }
+    connect()
+    function btnClick() {
+        div.innerHTML = ''
+        if (!ws) {
+            connect(inp.value)
+        } else {
+            ws.send(JSON.stringify({val:inp.value,id:uid}))
+        }
+    }
+    function uuid() {
+        var d = new Date().getTime();
+        if (window.performance && typeof window.performance.now === "function") {
+            d += performance.now(); //use high-precision timer if available
+        }
+        var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = (d + Math.random() * 16) % 16 | 0;    // d是随机种子
+            d = Math.floor(d / 16);
+            return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+        return uuid;
+    }
+    const uid = uuid()
+    div1.innerHTML = '本设备id是    '+uid
+    // var ws = new WebSocket('ws:localhost:10000/websocket');
+
+
+</script>
+
+</html>
