@@ -1,29 +1,117 @@
-<?php /*a:1:{s:82:"C:\Users\xgf15\Desktop\study\first\www.fsqf.com_GsGcWs\view\index\index\index.html";i:1716973169;}*/ ?>
+<?php /*a:1:{s:82:"C:\Users\xgf15\Desktop\study\first\www.fsqf.com_GsGcWs\view\index\index\index.html";i:1717134530;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>师徒教育</title>
+    <title>师图教育</title>
     <link rel="stylesheet" href="/static/fs/css/first.css">
+    <link rel="stylesheet" href="/static/fs/css/swiper-bundle.min.css" />
 </head>
 
 <body>
+<style>
+
+
+    .swiper {
+        width: 1600px;
+        height: 500px;
+        /*padding: 0;*/
+        /*margin: 0;*/
+        /*padding-left: 20px;*/
+
+
+    }
+
+    .swiper-slide {
+        text-align: center;
+        /*font-size: 20px;*/
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*margin-right: -10px;*/
+        width: 350px;
+        height: 440px;
+        /*position: relative;*/
+        /*left: 0px;*/
+        /*margin-right: 10px;*/
+        /*width: 200px;*/
+        /*height: 200px;*/
+    }
+    #skxclbli:nth-child(2n+1) {
+
+        width: 200px;
+        /*height: 10px;*/
+        margin-top: 20px;
+        z-index: 1;
+    }
+    #skxclbli:nth-child(2n){
+        width: 200px;
+        height: 300px;
+        z-index: 2;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        transform: scale(0.8);
+    }
+    .swiper-slide-active,.swiper-slide-duplicate-active{
+        transform: scale(1);
+    }
+
+
+
+
+
+
+    @media (max-width: 1000px) {
+        .swiper-button-next {
+            right: 20px;
+            transform: rotate(90deg);
+        }
+
+        .swiper-button-prev {
+            left: 20px;
+            transform: rotate(90deg);
+        }
+    }
+</style>
 
     
         <div class="d1" id="app">
             <p class="p1">欢迎进入师图教育官方网站！</p>
-            <img  class="img1" id="wbtp"  src="/static/fs/images/微博.png" alt="">
+            <img  class="img1" id="wbtp"  src="/static/fs/images/wb.png" alt="">
             <div class="xlwb" ><p >新浪微博</p></div>
-            <div class="img1" id="gzhtp"><img src="/static/fs/images/公众号.png" alt=""></div>
+            <div class="img1" id="gzhtp"><img src="/static/fs/images/gzh1.png" alt=""></div>
             <div class="p1" id="wxgzh"><p>微信公众号</p></div>
-            <img class="img1" id="jjdhtp" src="/static/fs/images/家居-电话.png" alt="">
+            <img class="img1" id="jjdhtp" src="/static/fs/images/jjdh1.png" alt="">
             <p class="p1" id="sarx" >上岸热线：400-127-5568</p>
         </div>
         
         <div class="d2">
             <img class="img2-1" id="stjytp"   src="/static/fs/images/f7c014c6-df8f-4cb4-95a8-4366f898963a.png" alt="">
-            <img class="img2-2" id="zzjytp" src="/static/fs/images/专耕江西  专注教育.png" alt="">
+            <img class="img2-2" id="zzjytp" src="/static/fs/images/zgjx1.png" alt="">
             <p class="p2" id="szst">选择师图 相信师图</p>
             <div class="yjjx" id="ssk" >
                 <input id="ssk1" style="border: none;;width: 356px;height: 36px;background-color: rgba(242, 243, 245, 1);border-radius: 50px;" type="text" size="10" maxlength="30" value="">
@@ -36,7 +124,7 @@
             <ul class="cd" id="cd">
 
                 <?php if(is_array($dhlb) || $dhlb instanceof \think\Collection || $dhlb instanceof \think\Paginator): if( count($dhlb)==0 ) : echo "" ;else: foreach($dhlb as $k=>$vo): ?>
-                <li id="dhlbli" style="margin-left: 100px;"><?php echo htmlentities($vo['name']); ?>
+                <li id="dhlbli" style="margin-left: 100px;"><?php echo htmlentities($vo['title']); ?>
 
                 </li>
                 <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -47,18 +135,18 @@
             <div class="d4" id="stfxtc" >
                 <img class="img3-1" id="stfxtp"  src="/static/fs/images/rocket.png" alt="">
                 <p class="stfx" id="stfx" >师图分校</p>
-                <img class="img3-2" id="szsttp"  src="/static/fs/images/选择师图 相信师图.png" alt="">
+                <img class="img3-2" id="szsttp"  src="/static/fs/images/szst1.png" alt="">
                 <ul class="lb2" id="lb2" >
                     <li ><img  src="/static/fs/images/组 11.png" alt=""></li>
-                    <li id="img1" ><img  src="/static/fs/images/组 11.png" alt=""></li>
-                    <li id="img1" ><img  src="/static/fs/images/组 11.png" alt=""></li>
-                    <li id="img1"  ><img  src="/static/fs/images/组 11.png" alt=""></li>
-                    <li id="img1" ><img  src="/static/fs/images/组 11.png" alt=""></li>
-                    <li id="img1" ><img  src="/static/fs/images/组 11.png" alt=""></li>
+                    <li id="img1" ><img  src="/static/fs/images/stfx2.png" alt=""></li>
+                    <li id="img1" ><img  src="/static/fs/images/stfx2.png" alt=""></li>
+                    <li id="img1"  ><img  src="/static/fs/images/stfx2.png" alt=""></li>
+                    <li id="img1" ><img  src="/static/fs/images/stfx2.png" alt=""></li>
+                    <li id="img1" ><img  src="/static/fs/images/stfx2.png" alt=""></li>
                 </ul>
                 <ul class="lb2" id="lb2-2" >
                     <?php if(is_array($stfxlb1) || $stfxlb1 instanceof \think\Collection || $stfxlb1 instanceof \think\Paginator): if( count($stfxlb1)==0 ) : echo "" ;else: foreach($stfxlb1 as $k=>$vo): ?>
-                    <li id="dhlbli" style="margin: 18px;margin-left: -2px;"><?php echo htmlentities($vo['name']); ?>
+                    <li id="dhlbli" style="margin: 18px;margin-left: -2px;"><?php echo htmlentities($vo['title']); ?>
 
                     </li>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -77,7 +165,7 @@
                 <p id="sxy2" ></p>
                 
             </div>
-            <img id="rmtp1" class="rmtp1"  src="/static/fs/images/热门.png" alt="">
+            <img id="rmtp1" class="rmtp1"  src="/static/fs/images/rm1.png" alt="">
             <p id="rmkc" >热门课程</p>
             <div class="d5" id="tc5" >
                 <div id="tc5-1" >
@@ -114,7 +202,7 @@
                 </div>
                 <div id="tc5-1-4" >
                     <p id="zkggwz" >招考公告</p>
-                    <img id="qxgtp"  src="/static/fs/images/矩形 2.png" alt="">
+                    <img id="qxgtp"  src="/static/fs/images/jx1.png" alt="">
                     <p id="qxgwz" >抢先看</p>
                 </div>
             </div>
@@ -199,10 +287,10 @@
         <ul style="position: absolute;top: 820px;left: 100px;display: flex;justify-content: space-between; ;list-style-type: none;">
 
 
-                <?php if(is_array($qmsatps) || $qmsatps instanceof \think\Collection || $qmsatps instanceof \think\Paginator): if( count($qmsatps)==0 ) : echo "" ;else: foreach($qmsatps as $k=>$vo): ?>
-                <li style="display: inline;width: 540px;height: 120px;border: 1px solid #000;margin-right: 100px;">
+                <?php if(is_array($sztp) || $sztp instanceof \think\Collection || $sztp instanceof \think\Paginator): if( count($sztp)==0 ) : echo "" ;else: foreach($sztp as $k=>$vo): ?>
+                <li style="display: inline;width: 540px;height: 120px;border: 1px solid #000;margin-right: 5px;">
 
-                        <img style="display: inline;width: 540px;height: 120px" src="<?php echo htmlentities($vo['files']); ?>">
+                        <img id="tttp" style="display: inline;width: 540px;height: 120px" src="<?php echo htmlentities($vo['pic']); ?>">
 
 
                 </li>
@@ -222,7 +310,7 @@
                 <p id="bkkc" >2025国考省考备考课程</p>
                 <ul  class="lb3" id="lb3" >
                     <?php if(is_array($jxsk1) || $jxsk1 instanceof \think\Collection || $jxsk1 instanceof \think\Paginator): if( count($jxsk1)==0 ) : echo "" ;else: foreach($jxsk1 as $k=>$vo): ?>
-                    <li id="dhlbli" style="margin: 10px"><?php echo htmlentities($vo['name']); ?>
+                    <li id="dhlbli" style="margin: 10px"><?php echo htmlentities($vo['title']); ?>
 
                     </li>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -235,7 +323,7 @@
         
                 <ul class="lb3" id="lb3-2" >
                     <?php if(is_array($jxsk2) || $jxsk2 instanceof \think\Collection || $jxsk2 instanceof \think\Paginator): if( count($jxsk2)==0 ) : echo "" ;else: foreach($jxsk2 as $k=>$vo): ?>
-                    <li id="dhlbli" style="margin: 10px"><?php echo htmlentities($vo['name']); ?>
+                    <li id="dhlbli" style="margin: 10px"><?php echo htmlentities($vo['title']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 
 <!--                    <li id="kc" >2024年江西公务员笔试备考指导手册</li>-->
@@ -257,7 +345,7 @@
                 <ul id="lb3" class="lb3" >
 
                     <?php if(is_array($jxsy1) || $jxsy1 instanceof \think\Collection || $jxsy1 instanceof \think\Paginator): if( count($jxsy1)==0 ) : echo "" ;else: foreach($jxsy1 as $k=>$vo): ?>
-                    <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['name']); ?>
+                    <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['title']); ?>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                    <li id="kc" >2024江西事业单位面试备考课程</li>-->
 <!--                    <li id="kc2" >【江西事业单位招聘公告汇总】</li>-->
@@ -269,7 +357,7 @@
                 <ul class="lb3" id="lb3-2" >
 
                     <?php if(is_array($jxsy2) || $jxsy2 instanceof \think\Collection || $jxsy2 instanceof \think\Paginator): if( count($jxsy2)==0 ) : echo "" ;else: foreach($jxsy2 as $k=>$vo): ?>
-                    <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['name']); ?>
+                    <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['title']); ?>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                    <li id="kc" >2024南昌红谷滩事业单位招考78人公告</li>-->
 <!--                    <li id="kc2" >吉安事业单位</li>-->
@@ -289,7 +377,7 @@
                     <ul id="lb3" class="lb3"  >
 
                         <?php if(is_array($gbtg1) || $gbtg1 instanceof \think\Collection || $gbtg1 instanceof \think\Paginator): if( count($gbtg1)==0 ) : echo "" ;else: foreach($gbtg1 as $k=>$vo): ?>
-                        <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['name']); ?>
+                        <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['title']); ?>
                             <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                        <li id="kc" >江西省2024年中小学教师招聘公告</li>-->
 <!--                        <li id="kc2" >2024江西教师笔试备考课</li>-->
@@ -301,7 +389,7 @@
                     <ul class="lb3"id="lb3-2"  >
 
                         <?php if(is_array($gbtg2) || $gbtg2 instanceof \think\Collection || $gbtg2 instanceof \think\Paginator): if( count($gbtg2)==0 ) : echo "" ;else: foreach($gbtg2 as $k=>$vo): ?>
-                        <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['name']); ?>
+                        <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['title']); ?>
                             <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                        <li id="kc" >教师招聘备考资料</li>-->
 <!--                        <li id="kc2" >特岗待遇</li>-->
@@ -323,7 +411,7 @@
                         <ul id="lb3" class="lb3" >
 
                             <?php if(is_array($ylzp1) || $ylzp1 instanceof \think\Collection || $ylzp1 instanceof \think\Paginator): if( count($ylzp1)==0 ) : echo "" ;else: foreach($ylzp1 as $k=>$vo): ?>
-                            <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['name']); ?>
+                            <li id="dhlbli" style="margin: 8px"><?php echo htmlentities($vo['title']); ?>
                                 <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                            <li id="kc" >2024赣州医疗事业单位招458人</li>-->
 <!--                            <li id="kc2" >医疗在线网课</li>-->
@@ -358,11 +446,11 @@
 
 
                 <?php if(is_array($fdkcs) || $fdkcs instanceof \think\Collection || $fdkcs instanceof \think\Paginator): if( count($fdkcs)==0 ) : echo "" ;else: foreach($fdkcs as $k=>$vo): ?>
-                <li style="display: inline;width: 320px;height: 220px;border: 1px solid #000;margin-right: 100px;border-radius: 0px 0px 10px 10px;background: #f5f2f2;">
+                <li style="display: inline;width: 320px;height: 220px;border: 1px solid #000;margin-right: 10px;border-radius: 0px 0px 10px 10px;background: #f5f2f2;">
 
-                    <img style="display: inline;width: 320px;height: 220px" src="<?php echo htmlentities($vo['files']); ?>">
+                    <img style="display: inline;width: 320px;height: 220px" src="<?php echo htmlentities($vo['pic']); ?>">
                     <div style="width: 320px;height: 80px;background: #f5f2f2;margin-top: -20px;border-radius: 0px 0px 10px 10px;">
-                        <p style="width: 221px;height: 19px;font-family: Microsoft YaHei;font-weight: 400;font-size: 16px;color: #2D2D2D;padding-top: 10px;"><?php echo htmlentities($vo['name']); ?></p>
+                        <p style="width: 221px;height: 19px;font-family: Microsoft YaHei;font-weight: 400;font-size: 16px;color: #2D2D2D;padding-top: 10px;"><?php echo htmlentities($vo['title']); ?></p>
                         <p style="width: 93px;height: 20px;font-family: Microsoft YaHei;font-weight: bold;font-size: 24px;color: #E73648;padding-top: -60px;"><?php echo htmlentities($vo['key']); ?></p>
                     </div>
 
@@ -433,13 +521,13 @@
     
     
         <!-- 新闻速递模块 -->
-        <img id="xwsdtp" style="position: absolute;margin-top: 350px"  src="/static/fs/images/新闻公告.png" alt="">
+        <img id="xwsdtp" style="position: absolute;margin-top: 350px"  src="/static/fs/images/xwgg1.png" alt="">
         <p id="xwsdwz" style="margin-top: 130px;margin-left: -775px;margin-top: 372px;" >新闻速递</p>
 
         <div class="d8-1" id="xwsdtc" style="margin-top: 50px" >
             <ul class="lb4" id="xwlb1" style="margin-top: 110px">
                 <?php if(is_array($xwsd1) || $xwsd1 instanceof \think\Collection || $xwsd1 instanceof \think\Paginator): if( count($xwsd1)==0 ) : echo "" ;else: foreach($xwsd1 as $k=>$vo): ?>
-                <li id="dhlbli" style="margin-top: 0px"><?php echo htmlentities($vo['name']); ?>
+                <li id="dhlbli" style="margin-top: 0px"><?php echo htmlentities($vo['title']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 
 <!--                <li id="li1" >江西省2024年成人高考报名温馨提示</li>-->
@@ -450,7 +538,7 @@
            
             <ul class="lb5" id="xwlb2" style="margin-top: 90px" >
 
-                <?php if(is_array($xwsd2) || $xwsd2 instanceof \think\Collection || $xwsd2 instanceof \think\Paginator): if( count($xwsd2)==0 ) : echo "" ;else: foreach($xwsd2 as $k=>$vo): ?>
+                <?php if(is_array($xwsd1) || $xwsd1 instanceof \think\Collection || $xwsd1 instanceof \think\Paginator): if( count($xwsd1)==0 ) : echo "" ;else: foreach($xwsd1 as $k=>$vo): ?>
                 <li id="dhlbli" style="margin: 7px;font-size: 12px"><?php echo htmlentities($vo['key']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li>2024-05-09</li>-->
@@ -458,9 +546,9 @@
 <!--                <li>2024-05-09</li>-->
             </ul>
     
-            <ul class="lb4" id="xwlb3" style="margin-top: 90px">
-                <?php if(is_array($xwsd3) || $xwsd3 instanceof \think\Collection || $xwsd3 instanceof \think\Paginator): if( count($xwsd3)==0 ) : echo "" ;else: foreach($xwsd3 as $k=>$vo): ?>
-                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['name']); ?>
+            <ul class="lb4" id="xwlb1" style="margin-top: 95px;margin-left: 800px">
+                <?php if(is_array($xwsd2) || $xwsd2 instanceof \think\Collection || $xwsd2 instanceof \think\Paginator): if( count($xwsd2)==0 ) : echo "" ;else: foreach($xwsd2 as $k=>$vo): ?>
+                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['title']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li id="li1" >江西省2024年成人高考报名温馨提示</li>-->
 <!--                <li>中共四川省委组织部 关于2024年四川省法院、检察院系统公开考…</li>-->
@@ -470,7 +558,7 @@
            
             <ul class="lb5" id="xwlb4" style="margin-top: 90px">
 
-                <?php if(is_array($xwsd4) || $xwsd4 instanceof \think\Collection || $xwsd4 instanceof \think\Paginator): if( count($xwsd4)==0 ) : echo "" ;else: foreach($xwsd4 as $k=>$vo): ?>
+                <?php if(is_array($xwsd2) || $xwsd2 instanceof \think\Collection || $xwsd2 instanceof \think\Paginator): if( count($xwsd2)==0 ) : echo "" ;else: foreach($xwsd2 as $k=>$vo): ?>
                 <li id="dhlbli" style="margin: 7px;font-size: 12px"><?php echo htmlentities($vo['key']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li>2024-05-09</li>-->
@@ -482,7 +570,7 @@
         </div>
     
         <!-- 报考公告模块 -->
-        <img id="bkgglog"  src="/static/fs/images/公开招考-公务员招考公告.png" alt="">
+        <img id="bkgglog"  src="/static/fs/images/gkzk1.png" alt="">
         <p id="bkggwz" >招考公告</p>
         
     
@@ -493,7 +581,7 @@
             <ul class="lb6" id="bklb1" >
 
                 <?php if(is_array($gjgwy1) || $gjgwy1 instanceof \think\Collection || $gjgwy1 instanceof \think\Paginator): if( count($gjgwy1)==0 ) : echo "" ;else: foreach($gjgwy1 as $k=>$vo): ?>
-                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['name']); ?>
+                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['title']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li id="li1" >江西省2024年成人高考报名温馨提示</li>-->
 <!--                <li>中共四川省委组织部 关于2024年四…</li>-->
@@ -503,7 +591,7 @@
 <!--                <li>2024于都事业单位招聘笔试时间…</li>-->
             </ul>
             <ul class="lb6" id="bklb2" >
-                <?php if(is_array($gjgwy2) || $gjgwy2 instanceof \think\Collection || $gjgwy2 instanceof \think\Paginator): if( count($gjgwy2)==0 ) : echo "" ;else: foreach($gjgwy2 as $k=>$vo): ?>
+                <?php if(is_array($gjgwy1) || $gjgwy1 instanceof \think\Collection || $gjgwy1 instanceof \think\Paginator): if( count($gjgwy1)==0 ) : echo "" ;else: foreach($gjgwy1 as $k=>$vo): ?>
                 <li id="dhlbli" style="margin: 7px;font-size: 12px"><?php echo htmlentities($vo['key']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li>2024-05-09</li>-->
@@ -524,7 +612,7 @@
             <p id="bkwz2" >/  国企招聘</p>
             <ul class="lb6" id="bklb1">
                 <?php if(is_array($jryh1) || $jryh1 instanceof \think\Collection || $jryh1 instanceof \think\Paginator): if( count($jryh1)==0 ) : echo "" ;else: foreach($jryh1 as $k=>$vo): ?>
-                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['name']); ?>
+                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['title']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li id="li1" >江西省2024年成人高考报名温馨提示</li>-->
 <!--                <li>中共四川省委组织部 关于2024年四…</li>-->
@@ -535,7 +623,7 @@
             </ul>
     
             <ul class="lb6" id="bklb2" >
-                <?php if(is_array($jryh2) || $jryh2 instanceof \think\Collection || $jryh2 instanceof \think\Paginator): if( count($jryh2)==0 ) : echo "" ;else: foreach($jryh2 as $k=>$vo): ?>
+                <?php if(is_array($jryh1) || $jryh1 instanceof \think\Collection || $jryh1 instanceof \think\Paginator): if( count($jryh1)==0 ) : echo "" ;else: foreach($jryh1 as $k=>$vo): ?>
                 <li id="dhlbli" style="margin: 7px;font-size: 12px"><?php echo htmlentities($vo['key']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li>2024-05-09</li>-->
@@ -557,7 +645,7 @@
             <p id="bkwz2" >/  社区招聘</p>
             <ul class="lb6" id="bklb1" >
                 <?php if(is_array($sjy1) || $sjy1 instanceof \think\Collection || $sjy1 instanceof \think\Paginator): if( count($sjy1)==0 ) : echo "" ;else: foreach($sjy1 as $k=>$vo): ?>
-                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['name']); ?>
+                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['title']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li id="li1" >江西省2024年成人高考报名温馨提示</li>-->
 <!--                <li>中共四川省委组织部 关于2024年四…</li>-->
@@ -568,7 +656,7 @@
             </ul>
             <ul class="lb6" id="bklb2" >
 
-                <?php if(is_array($sjy2) || $sjy2 instanceof \think\Collection || $sjy2 instanceof \think\Paginator): if( count($sjy2)==0 ) : echo "" ;else: foreach($sjy2 as $k=>$vo): ?>
+                <?php if(is_array($sjy1) || $sjy1 instanceof \think\Collection || $sjy1 instanceof \think\Paginator): if( count($sjy1)==0 ) : echo "" ;else: foreach($sjy1 as $k=>$vo): ?>
                 <li id="dhlbli" style="margin: 7px;font-size: 12px"><?php echo htmlentities($vo['key']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li>2024-05-09</li>-->
@@ -590,7 +678,7 @@
             <ul class="lb6" id="bklb1" >
 
                 <?php if(is_array($sydw1) || $sydw1 instanceof \think\Collection || $sydw1 instanceof \think\Paginator): if( count($sydw1)==0 ) : echo "" ;else: foreach($sydw1 as $k=>$vo): ?>
-                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['name']); ?>
+                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['title']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li id="li1" >江西省2024年成人高考报名温馨提示</li>-->
 <!--                <li>中共四川省委组织部 关于2024年四…</li>-->
@@ -601,7 +689,7 @@
             </ul>
             <ul class="lb6" id="bklb2" >
 
-                <?php if(is_array($sydw2) || $sydw2 instanceof \think\Collection || $sydw2 instanceof \think\Paginator): if( count($sydw2)==0 ) : echo "" ;else: foreach($sydw2 as $k=>$vo): ?>
+                <?php if(is_array($sydw1) || $sydw1 instanceof \think\Collection || $sydw1 instanceof \think\Paginator): if( count($sydw1)==0 ) : echo "" ;else: foreach($sydw1 as $k=>$vo): ?>
                 <li id="dhlbli" style="margin: 7px;font-size: 12px"><?php echo htmlentities($vo['key']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li>2024-05-09</li>-->
@@ -623,7 +711,7 @@
             <ul class="lb6" id="bklb1" >
 
                 <?php if(is_array($jszp1) || $jszp1 instanceof \think\Collection || $jszp1 instanceof \think\Paginator): if( count($jszp1)==0 ) : echo "" ;else: foreach($jszp1 as $k=>$vo): ?>
-                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['name']); ?>
+                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['title']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li id="li1" >江西省2024年成人高考报名温馨提示</li>-->
 <!--                <li>中共四川省委组织部 关于2024年四…</li>-->
@@ -633,7 +721,7 @@
 <!--                <li>2024于都事业单位招聘笔试时间…</li>-->
             </ul>
             <ul class="lb6" id="bklb2" >
-                <?php if(is_array($jszp2) || $jszp2 instanceof \think\Collection || $jszp2 instanceof \think\Paginator): if( count($jszp2)==0 ) : echo "" ;else: foreach($jszp2 as $k=>$vo): ?>
+                <?php if(is_array($jszp1) || $jszp1 instanceof \think\Collection || $jszp1 instanceof \think\Paginator): if( count($jszp1)==0 ) : echo "" ;else: foreach($jszp1 as $k=>$vo): ?>
                 <li id="dhlbli" style="margin: 7px;font-size: 12px"><?php echo htmlentities($vo['key']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li>2024-05-09</li>-->
@@ -655,7 +743,7 @@
             <ul class="lb6" id="bklb1" >
 
                 <?php if(is_array($jdwz1) || $jdwz1 instanceof \think\Collection || $jdwz1 instanceof \think\Paginator): if( count($jdwz1)==0 ) : echo "" ;else: foreach($jdwz1 as $k=>$vo): ?>
-                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['name']); ?>
+                <li id="dhlbli" style="margin: 7px;"><?php echo htmlentities($vo['title']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li id="li1">江西省2024年成人高考报名温馨提示</li>-->
 <!--                <li>中共四川省委组织部 关于2024年四…</li>-->
@@ -665,7 +753,7 @@
 <!--                <li>2024于都事业单位招聘笔试时间…</li>-->
             </ul>
             <ul class="lb6" id="bklb2" >
-                <?php if(is_array($jdwz2) || $jdwz2 instanceof \think\Collection || $jdwz2 instanceof \think\Paginator): if( count($jdwz2)==0 ) : echo "" ;else: foreach($jdwz2 as $k=>$vo): ?>
+                <?php if(is_array($jdwz1) || $jdwz1 instanceof \think\Collection || $jdwz1 instanceof \think\Paginator): if( count($jdwz1)==0 ) : echo "" ;else: foreach($jdwz1 as $k=>$vo): ?>
                 <li id="dhlbli" style="margin: 7px;font-size: 12px"><?php echo htmlentities($vo['key']); ?>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
 <!--                <li>2024-05-09</li>-->
@@ -682,30 +770,60 @@
         </div>
     
         <!-- 师资团队·模块 -->
-        <img id="sztdlog"  src="/static/fs/images/教师.png" alt="">
+        <img id="sztdlog"  src="/static/fs/images/js1.png" alt="">
         <p id="sztdwz" >师资团队</p>
-    
-        <h1 id="an1" ><</h1>
 
-            <ul style="display: flex;justify-content: space-between; ;list-style-type: none;padding-right: 0px;margin-left: -800px">
+        <div class="swiper" style="margin-left: -750px">
+            <ul class="swiper-wrapper" style="display: flex;justify-content: space-between; ;list-style-type: none;margin-right: 1400px">
+<!--            <div class="swiper-wrapper">-->
+
+                    <?php if(is_array($sztds) || $sztds instanceof \think\Collection || $sztds instanceof \think\Paginator): if( count($sztds)==0 ) : echo "" ;else: foreach($sztds as $k=>$vo): ?>
+<!--                    <div class="swiper-slide">-->
+                        <li  class="swiper-slide" style="display: inline;width: 350px;height: 440px;margin-left: -50px">
+                            <div class="" style=";margin-left: -20px" >
+                                <img style="display: inline;width: 350px;height: 440px;" src="<?php echo htmlentities($vo['pic']); ?>" alt="">
+                                <div style="width: 350px;height: 80px;background: #f5f2f2;margin-top: -80px;margin-left: 85px;border-radius: 0px 0px 10px 10px;text-align: center;opacity: 0.5;">
+                                    <p style="width: 47px;height: 17px;font-family: Microsoft YaHei;font-weight: bold;font-size: 15px;color: #E73648;text-align: center;padding-left: 150px;"><?php echo htmlentities($vo['title']); ?></p>
+                                    <p style="width: 207px;height: 17px;font-family: Microsoft YaHei;font-weight: 400;font-size: 15px;color: #FFFFFF;text-align: center;padding-left: 70px"><?php echo htmlentities($vo['key']); ?></p>
+                                </div>
+
+                            </div>
+
+                        </li>
+<!--                    </div>-->
+
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
 
 
-                <?php if(is_array($sztds) || $sztds instanceof \think\Collection || $sztds instanceof \think\Paginator): if( count($sztds)==0 ) : echo "" ;else: foreach($sztds as $k=>$vo): ?>
-                <li style="display: inline;width: 350px;height: 440px;border: 1px solid #000;margin-right: 100px;border-radius: 0px 0px 10px 10px;background: #f5f2f2;;">
-
-                    <img style="display: inline;width: 350px;height: 440px;" src="<?php echo htmlentities($vo['files']); ?>">
-                    <div style="width: 350px;height: 80px;background: #f5f2f2;margin-top: -100px;border-radius: 0px 0px 10px 10px;text-align: center;opacity: 0.5;">
-                        <p style="width: 47px;height: 17px;font-family: Microsoft YaHei;font-weight: bold;font-size: 15px;color: #E73648;text-align: center;padding-left: 150px"><?php echo htmlentities($vo['name']); ?></p>
-                        <p style="width: 207px;height: 17px;font-family: Microsoft YaHei;font-weight: 400;font-size: 15px;color: #FFFFFF;text-align: center;padding-left: 70px"><?php echo htmlentities($vo['key']); ?></p>
-                    </div>
 
 
-                </li>
-                <?php endforeach; endif; else: echo "" ;endif; ?>
-
-
-
+<!--            </div>-->
             </ul>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    
+<!--        <h1 id="an1" ><</h1>-->
+
+<!--            <ul style="display: flex;justify-content: space-between; ;list-style-type: none;padding-right: 0px;margin-left: -800px">-->
+
+
+<!--                <?php if(is_array($sztds) || $sztds instanceof \think\Collection || $sztds instanceof \think\Paginator): if( count($sztds)==0 ) : echo "" ;else: foreach($sztds as $k=>$vo): ?>-->
+<!--                <li style="display: inline;width: 350px;height: 440px;border: 1px solid #000;margin-right: 8px;border-radius: 0px 0px 10px 10px;background: #f5f2f2;;">-->
+
+<!--                    <img style="display: inline;width: 350px;height: 440px;" src="<?php echo htmlentities($vo['pic']); ?>">-->
+<!--                    <div style="width: 350px;height: 80px;background: #f5f2f2;margin-top: -100px;border-radius: 0px 0px 10px 10px;text-align: center;opacity: 0.5;">-->
+<!--                        <p style="width: 47px;height: 17px;font-family: Microsoft YaHei;font-weight: bold;font-size: 15px;color: #E73648;text-align: center;padding-left: 150px;"><?php echo htmlentities($vo['title']); ?></p>-->
+<!--                        <p style="width: 207px;height: 17px;font-family: Microsoft YaHei;font-weight: 400;font-size: 15px;color: #FFFFFF;text-align: center;padding-left: 70px"><?php echo htmlentities($vo['key']); ?></p>-->
+<!--                    </div>-->
+
+
+<!--                </li>-->
+<!--                <?php endforeach; endif; else: echo "" ;endif; ?>-->
+
+
+
+<!--            </ul>-->
         <!-- 1 -->
 <!--        <div class="d10-1" id="sztc1" >-->
 <!--            <img id="sztc1-tp"  src="/static/fs/images/img1.png" alt="">-->
@@ -742,7 +860,7 @@
 <!--            </div>-->
 <!--    -->
 <!--        </div>-->
-        <h1 id="an2" >></h1>
+<!--        <h1 id="an2" >></h1>-->
         <!-- <div class="slider" style="margin-left: -500px;">
             <div class="slides">
                 <img style="width: 350px;height: 440px;" src="images/img1.png" alt="Image 1">
@@ -775,21 +893,21 @@
                 <p id="wz1" >多家直营分部和学习中心
                     覆盖全省5个地市</p>
                     <p id="wz2" >5+</p>
-                    <img id="tp"  src="/static/fs/images/分支机构.png" alt="">
+                    <img id="tp"  src="/static/fs/images/fzjg1.png" alt="">
             </div>
           
             <!-- 2 -->
             <div id="sttc1-3" >
                 <p id="wz1" >专职师资+研发人员共计</p>
                     <p id="wz2" >300+</p>
-                    <img id="tp"  src="/static/fs/images/教师 (1).png" alt="">
+                    <img id="tp"  src="/static/fs/images/js2.png" alt="">
             </div>
     
             <!-- 3 -->
             <div id="sttc1-4" >
                 <p id="wz1" >拥有400余名员工</p>
                     <p id="wz2" >400+</p>
-                    <img id="tp"  src="/static/fs/images/员工管理.png" alt="">
+                    <img id="tp"  src="/static/fs/images/yggl1.png" alt="">
             </div>
     
             <!-- 4 -->
@@ -797,7 +915,7 @@
                 <p id="wz1" style="">培训学员超过
                     9999余人次</p>
                     <p id="wz2" style="">999+</p>
-                    <img id="tp" style="" src="/static/fs/images/学生.png" alt="">
+                    <img id="tp" style="" src="/static/fs/images/xs1.png" alt="">
             </div>
     
         </div>
@@ -806,39 +924,65 @@
         <!-- ?上课现场模块 -->
 
     
-        <img id="xclog" style="margin-top: 200px;" src="/static/fs/images/w_黑板.png" alt="">
+        <img id="xclog" style="margin-top: 200px;" src="/static/fs/images/hb1.png" alt="">
         <p id="xcwz" style="">上课现场</p>
-        <h1 id="an3" style=""><</h1>
-
-        <ul style="display: flex;justify-content: space-between; ;list-style-type: none;padding-right: 0px;margin-left: -800px">
-
-
-            <?php if(is_array($skxcs) || $skxcs instanceof \think\Collection || $skxcs instanceof \think\Paginator): if( count($skxcs)==0 ) : echo "" ;else: foreach($skxcs as $k=>$vo): ?>
-            <li style="display: inline;width: 350px;height: 440px;border: 1px solid #000;margin-right: 100px;border-radius: 0px 0px 10px 10px;background: #f5f2f2;;">
-
-                <img style="display: inline;width: 350px;height: 440px;" src="<?php echo htmlentities($vo['files']); ?>">
 
 
 
-            </li>
-            <?php endforeach; endif; else: echo "" ;endif; ?>
+
+            <div class="swiper" style="margin-left: -750px">
+                <ul class="swiper-wrapper" style="display: flex;margin-right:0px">
+
+
+                    <?php if(is_array($skxcs) || $skxcs instanceof \think\Collection || $skxcs instanceof \think\Paginator): if( count($skxcs)==0 ) : echo "" ;else: foreach($skxcs as $k=>$vo): ?>
+
+                    <li  class="swiper-slide" id="skxclbli" style="display: inline;;margin-left: -50px">
+<!--                        <div class="" style=";margin-left: -20px" >-->
+                            <img style="display: inline-block;" src="<?php echo htmlentities($vo['pic']); ?>" alt="">
+
+
+<!--                        </div>-->
+
+                    </li>
+
+
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+
+                </ul>
+                <div class="swiper-button-next" style=""></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+<!--        <h1 id="an3" style=""><</h1>-->
+
+<!--        <ul style="display: flex;justify-content: space-between; ;list-style-type: none;padding-right: 0px;margin-left: -800px">-->
+
+
+<!--            <?php if(is_array($skxcs) || $skxcs instanceof \think\Collection || $skxcs instanceof \think\Paginator): if( count($skxcs)==0 ) : echo "" ;else: foreach($skxcs as $k=>$vo): ?>-->
+<!--            <li style="display: inline;width: 350px;height: 440px;border: 1px solid #000;margin-right: 10px;border-radius: 0px 0px 10px 10px;background: #f5f2f2;;">-->
+
+<!--                <img style="display: inline;width: 350px;height: 440px;" src="<?php echo htmlentities($vo['pic']); ?>">-->
 
 
 
-        </ul>
+<!--            </li>-->
+<!--            <?php endforeach; endif; else: echo "" ;endif; ?>-->
+
+
+
+<!--        </ul>-->
 <!--        <img id="xctp1" style="" src="/static/fs/images/img1.png" alt="">-->
 <!--        <img id="xctp2" style="" src="/static/fs/images/img2.png" alt="">-->
 <!--        <img id="xctp3" style="" src="/static/fs/images/img3.png" alt="">-->
 <!--        <img id="xctp4" style="" src="/static/fs/images/img4.png" alt="">-->
 <!--        <img id="xctp5" style="" src="/static/fs/images/img1.png" alt="">-->
-        <h1 id="an4" style="">></h1>
+<!--        <h1 id="an4" style="">></h1>-->
     
     
         <!-- 页脚 -->
-        <div id="yjtc" class="yjtc" style="">
+        <div id="yjtc" class="yjtc" style="margin-top: 10px">
             <ul id="yjcd1" style=" list-style-type: none;display: inline;ma">
-                <?php if(is_array($yjcd1) || $yjcd1 instanceof \think\Collection || $yjcd1 instanceof \think\Paginator): if( count($yjcd1)==0 ) : echo "" ;else: foreach($yjcd1 as $k=>$vo): ?>
-                <li id="dhlbli" style="display: inline;margin-left: -35px;margin-right: 150px"><?php echo htmlentities($vo['name']); ?>
+                <?php if(is_array($yjcd) || $yjcd instanceof \think\Collection || $yjcd instanceof \think\Paginator): if( count($yjcd)==0 ) : echo "" ;else: foreach($yjcd as $k=>$vo): ?>
+                <li id="dhlbli" style="display: inline;margin-left: -35px;margin-right: 150px"><?php echo htmlentities($vo['title']); ?>
 
                 </li>
                 <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -850,8 +994,8 @@
             <!-- 1 -->
             <ul class="lb2" id="lb1" style="margin-top: 150px;margin-left: -30px">
 
-                <?php if(is_array($yjcd2) || $yjcd2 instanceof \think\Collection || $yjcd2 instanceof \think\Paginator): if( count($yjcd2)==0 ) : echo "" ;else: foreach($yjcd2 as $k=>$vo): ?>
-                <li id="dhlbli" style=""><?php echo htmlentities($vo['name']); ?>
+                <?php if(is_array($yjcd1) || $yjcd1 instanceof \think\Collection || $yjcd1 instanceof \think\Paginator): if( count($yjcd1)==0 ) : echo "" ;else: foreach($yjcd1 as $k=>$vo): ?>
+                <li id="dhlbli" style=""><?php echo htmlentities($vo['title']); ?>
 
                 </li>
                 <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -863,8 +1007,8 @@
             <!-- 2 -->
             <ul class="lb2" id="lb2" style="margin-left: -10px">
 
-                <?php if(is_array($yjcd3) || $yjcd3 instanceof \think\Collection || $yjcd3 instanceof \think\Paginator): if( count($yjcd3)==0 ) : echo "" ;else: foreach($yjcd3 as $k=>$vo): ?>
-                <li id="dhlbli" style=""><?php echo htmlentities($vo['name']); ?>
+                <?php if(is_array($yjcd2) || $yjcd2 instanceof \think\Collection || $yjcd2 instanceof \think\Paginator): if( count($yjcd2)==0 ) : echo "" ;else: foreach($yjcd2 as $k=>$vo): ?>
+                <li id="dhlbli" style=""><?php echo htmlentities($vo['title']); ?>
 
                 </li>
                 <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -883,7 +1027,7 @@
             <!-- 3 -->
             <ul class="lb2" id="lb3" style="margin-left: -60px">
                 <?php if(is_array($yjcd3) || $yjcd3 instanceof \think\Collection || $yjcd3 instanceof \think\Paginator): if( count($yjcd3)==0 ) : echo "" ;else: foreach($yjcd3 as $k=>$vo): ?>
-                <li id="dhlbli" style=""><?php echo htmlentities($vo['name']); ?>
+                <li id="dhlbli" style=""><?php echo htmlentities($vo['title']); ?>
 
                 </li>
                 <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -902,8 +1046,8 @@
             <!-- 4 -->
             <ul class="lb2" id="lb4" style="margin-left: -80px">
 
-                <?php if(is_array($yjcd5) || $yjcd5 instanceof \think\Collection || $yjcd5 instanceof \think\Paginator): if( count($yjcd5)==0 ) : echo "" ;else: foreach($yjcd5 as $k=>$vo): ?>
-                <li id="dhlbli" style=""><?php echo htmlentities($vo['name']); ?>
+                <?php if(is_array($yjcd4) || $yjcd4 instanceof \think\Collection || $yjcd4 instanceof \think\Paginator): if( count($yjcd4)==0 ) : echo "" ;else: foreach($yjcd4 as $k=>$vo): ?>
+                <li id="dhlbli" style=""><?php echo htmlentities($vo['title']); ?>
 
                 </li>
                 <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -914,15 +1058,21 @@
     
             <p id="gz" style="">关注与联系我们</p>
             <!-- 1 -->
-            <div id="gzh" style=""></div>
+            <div id="gzh" style="">
+                <img style="width: 100px;height: 100px" src="/static/fs/images/img1.png">
+            </div>
             <p id="lqzl" style="">微信领取资料</p>
     
             <!-- 2 -->
-            <div id="gzh2" style=""></div>
+            <div id="gzh2" style="">
+                <img style="width: 100px;height: 100px" src="/static/fs/images/img2.png">
+            </div>
             <p id="wz" style="">公众号</p>
     
             <!-- 3 -->
-            <div id="gzh3" style=""></div>
+            <div id="gzh3" style="">
+                <img style="width: 100px;height: 100px" src="/static/fs/images/img3.png">
+            </div>
             <p id="wxxx" style="">网校学习</p>
     
             <p style="font-family: Microsoft YaHei;font-weight: 400;font-size: 15px;color: #FFFFFF;line-height: 48px;;width: 266px;height: 17px;position: relative;left: 1270px;top: -1230px;">全国客服热线（工作日：8:30-17:30）</p>
@@ -932,8 +1082,8 @@
     
 <!--             <hr style="width: 1640px;height: 1px;background: #a01818;color: red;margin-top: -1100px">-->
             <ul style="margin-top: -1200px;margin-left: 10px">
-                <?php if(is_array($yjcd6) || $yjcd6 instanceof \think\Collection || $yjcd6 instanceof \think\Paginator): if( count($yjcd6)==0 ) : echo "" ;else: foreach($yjcd6 as $k=>$vo): ?>
-                <li id="dhlbli" style="display: inline;margin-left: 80px;color: #ababab"><?php echo htmlentities($vo['name']); ?>
+                <?php if(is_array($yjcd5) || $yjcd5 instanceof \think\Collection || $yjcd5 instanceof \think\Paginator): if( count($yjcd5)==0 ) : echo "" ;else: foreach($yjcd5 as $k=>$vo): ?>
+                <li id="dhlbli" style="display: inline;margin-left: 80px;color: #ababab"><?php echo htmlentities($vo['title']); ?>
 
                 </li>
                 <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -956,6 +1106,50 @@
 </body>
 <script src="/static/fs/js/axios.min.js"></script>
 <script src="/static/fs/js/vue.js"></script>
+<script src="/static/fs/js/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper', {
+        slidesPerView: 3,
+        slidesOffsetBefore : 100,
+        direction: getDirection(),
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        on: {
+            resize: function () {
+                swiper.changeDirection(getDirection());
+            },
+        },
+    });
+
+    function getDirection() {
+        var windowWidth = window.innerWidth;
+        var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+        return direction;
+    }
+
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 5,
+        spaceBetween: 2,
+        centeredSlides: true,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
+
+
+
+
+
+
+
+
+
 <script>
     new Vue({
         el:"#app",
